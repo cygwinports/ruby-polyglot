@@ -1,10 +1,17 @@
 inherit rubygem
 
 NAME="ruby-polyglot"
-VERSION=0.3.3
+VERSION=0.3.5
 RELEASE=1
 CATEGORY="Ruby"
 SUMMARY="Ruby custom loader extension"
 DESCRIPTION="The Polyglot library allows a Ruby module to register a loader for
 the file type associated with a filename extension, and it augments 'require'
 to find and load matching files."
+
+ARCH=noarch
+
+PKG_NAMES="${NAME} ${NAME}-doc"
+ruby_polyglot_CONTENTS="${RUBYGEM_INSTDIR#/} ${RUBYGEM_SPEC#/}"
+ruby_polyglot_doc_CONTENTS=${RUBYGEM_DOCDIR#/}
+
